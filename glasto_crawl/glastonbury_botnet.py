@@ -8,8 +8,8 @@ import time
 import os
 
 glastonbury_url="https://glastonbury.seetickets.com/content/extras"
-#glastonbury_url="https://glastonbury.seetickets.com/event/glastonbury-2023/worthy-farm/2400000"
-#glastonbury_url="https://glastonbury.seetickets.com/event/glastonbury-2023-deposits/worthy-farm/2400000"
+#glastonbury_url="https://glastonbury.seetickets.com/event/glastonbury-2024/worthy-farm/2400000"
+#glastonbury_url="https://glastonbury.seetickets.com/event/glastonbury-2024-deposits/worthy-farm/2400000"
 #glastonbury_url="http://127.0.0.1:8080/"
 refresh_phrases = ["You will be held at this page until there is a free space on the booking site"]
 kill_phrases = ["Registration Number:","Postcode:"]
