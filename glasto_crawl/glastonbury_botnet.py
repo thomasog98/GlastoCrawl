@@ -18,12 +18,11 @@ refresh_rate=0.8
 reg_1 = "reg_1"
 reg_2 = "reg_2"
 reg_3 = "reg_3"
-reg_4 = "reg_4"
-reg_5 = "reg_5"
+reg_4 = "reg_4" 
 
-reg_details = {reg_1:[],reg_2:[],reg_3:[],reg_4:[],reg_5:[]}
+reg_details = {reg_1:[],reg_2:[],reg_3:[],reg_4:[]}
 
-csvfile = csv.reader(open(r"C:\Users\Thomas\Documents\GitHub\to_int\glasto_crawl\reg-details.csv","r"))
+csvfile = csv.reader(open(r"C:\glasto_crawl\reg-details.csv","r"))
 cnt = 1
 for row in csvfile:
     reg_num = "reg_" + str(cnt)
@@ -71,7 +70,7 @@ while True:
         else:
             time.sleep(refresh_rate)
             print("Refreshing...")
-            if(os.path.isfile(r"C:\Users\Thomas\Documents\GitHub\to_int\glasto_crawl\kill")):
+            if(os.path.isfile(r"C:\kill")):
                 print("Killing auto refresh")
                 break
             browser.refresh()
