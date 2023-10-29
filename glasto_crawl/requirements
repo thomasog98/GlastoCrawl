@@ -2,3 +2,5 @@ https://pypi.org/project/selenium/
 https://chromedriver.chromium.org/downloads
 https://www.python.org/downloads/
 https://www.google.com/intl/en_uk/chrome/?brand=CHBD&gclid=Cj0KCQjw4vKpBhCZARIsAOKHoWSxpsFTRGhW3AWb9NPOH9iOjNxjWO7valuK_x741fvmNsqG_530sJoaAtASEALw_wcB&gclsrc=aw.ds
+
+py -m pip install selenium
