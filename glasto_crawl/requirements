@@ -3,4 +3,9 @@ https://chromedriver.chromium.org/downloads
 https://www.python.org/downloads/
 https://www.google.com/intl/en_uk/chrome/?brand=CHBD&gclid=Cj0KCQjw4vKpBhCZARIsAOKHoWSxpsFTRGhW3AWb9NPOH9iOjNxjWO7valuK_x741fvmNsqG_530sJoaAtASEALw_wcB&gclsrc=aw.ds
 
+
+#glastonbury_url="https://glastonbury.seetickets.com/event/glastonbury-2024-deposits/worthy-farm/3500000"
+https://glastonbury.seetickets.com/event/glastonbury-2024-ticket-coach-travel/worthy-farm/3500011
+https://glastonbury.seetickets.com/event/glastonbury-2024-ticket-coach-travel/worthy-farm/3500012
+
 py -m pip install selenium
