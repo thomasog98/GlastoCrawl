@@ -42,12 +42,15 @@ def populate_form():
         time_date = datetime.now()
         print(time_date,"Populating form with registration details\n")
         page_cnt=0
+        # Added 0.5 second delay before attempting reg publishing allows the webpage to load fully 
+        time.sleep(0.5)
         for reg_cnt in reg_details:
             browser.find_element(By.ID, "registrations_"+str(page_cnt)+"__RegistrationId").send_keys(reg_details[reg_cnt][0])
             browser.find_element(By.ID, "registrations_"+str(page_cnt)+"__PostCode").send_keys(reg_details[reg_cnt][1])
             page_cnt+=1
 
-        #Submit after populating
+        # Submit after populating
+        # Tthis needs some work add_registrations does not exist. 
         time_date = datetime.now()
         print(time_date,"Submitting registration details\n")
         add_reg = browser.find_element(By.ID, "add_registrations")
