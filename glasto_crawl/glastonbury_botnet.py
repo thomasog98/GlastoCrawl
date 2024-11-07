@@ -36,32 +36,24 @@ for row in csvfile:
     cnt+=1
 
 def populate_form():
-
+    #Function to post the registration details from the csv to the booking page. 
+    
     try: 
 
         time_date = datetime.now()
         print(time_date,"Populating form with registration details\n")
         page_cnt=0
-        # Added 0.5 second delay before attempting reg publishing allows the webpage to load fully 
-        time.sleep(0.5)
+        # Added 1 second delay before attempting reg publishing allows the webpage to load fully 
+        time.sleep(1)
+        # Loop to iterate through the webpage fields and send the relevant codes 
         for reg_cnt in reg_details:
+            time.sleep(refresh_rate) # Added a slight delay in to cater for populating the form, reduce chance of bot detection.
             browser.find_element(By.ID, "registrations_"+str(page_cnt)+"__RegistrationId").send_keys(reg_details[reg_cnt][0])
             browser.find_element(By.ID, "registrations_"+str(page_cnt)+"__PostCode").send_keys(reg_details[reg_cnt][1])
             page_cnt+=1
 
-        # Submit after populating
-        # Tthis needs some work add_registrations does not exist. 
-        time_date = datetime.now()
-        print(time_date,"Submitting registration details\n")
-        add_reg = browser.find_element(By.ID, "add_registrations")
-        browser.execute_script("arguments[0].scrollIntoView();", add_reg)
-        browser.execute_script("arguments[0].click();", add_reg)
-       # browser.find_element(By.ID, "add_registrations").Click()
-        time_date = datetime.now()
-        print(time_date,"Sucessfully added reg details\n")
-
     except Exception as e:
-        print("Issue posting, sleeping for a while",e)
+        print("Issue posting reg details, sleeping for a while",e)
         time.sleep(1000000)
     #Prevent the script from exiting while paying for the stuff
     time_date = datetime.now()
@@ -69,7 +61,26 @@ def populate_form():
     time.sleep(1000000)
     time.sleep(1000000)
 
-print("Welcome to Glastonbury Botnet for 2024")
+def submit_booking():
+    #Function to post the registration details. 
+
+    print("")
+    try:
+      # Submit after populating
+        # Tthis needs some work add_registrations does not exist. 
+        time_date = datetime.now()
+        print(time_date,"Submitting registration details\n")
+        add_reg = browser.find_element(By.ID, "add_registrations")
+        browser.execute_script("arguments[0].scrollIntoView();", add_reg)
+        #browser.execute_script("arguments[0].click();", add_reg)
+        # browser.find_element(By.ID, "add_registrations").Click()
+        time_date = datetime.now()
+        print(time_date,"Sucessfully added reg details\n")
+    except:
+        print("")
+        time.sleep(1000000)
+
+print("Welcome to Glastonbury Botnet for 2025")
 print("If you need to kill the refreshes, place kill in C directory\n")
 print("Please ensure you are using the correct chromedriver/Chrome version, Good Luck!\n")
 
@@ -128,11 +139,11 @@ while True:
         else:
             time.sleep(refresh_rate)
             time_date = datetime.now()
-            print(time_date,"Refreshing...")
+            print(time_date,"Awaiting slot in queue...")
             if(os.path.isfile(r"C:\kill")):
                 print("Killing auto refresh")
                 break
-            browser.refresh()
+            #browser.refresh() #Disabling browser refresh this year due to new queue system
         
 #Catch all in case the script does happen to get to the booking page but fails to post 
 time.sleep(1000000)
