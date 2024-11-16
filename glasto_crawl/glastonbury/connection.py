@@ -9,6 +9,7 @@ class srv():
         self.chrome_options = Options()
         self.chrome_options.add_argument("incognito")
         self.chrome_options.add_argument("disable")
+        self.chrome_options.add_argument("--blink-settings=imagesEnabled=false")
         prefs = {"profile.managed_default_content_settings.images": 2,
                  "profile.default_content_setting_values.cookies": 1,
                  "profile.managed_default_content_settings.javascript": 1, 
