@@ -2,8 +2,9 @@
 
 # Variables
 $resourceGroupName = "RG_glastonbury_botnet"
-$templateUri = "/home/thomas/glasto_template.json"
-$vmName = "glastobot_"
+$template = "/home/thomas/template.json"
+$templateParameters = "/home/thomas/parameters.json"
+$vmName = "glastobot"
 $location = "UK South"
 
 # Login to Azure
@@ -14,6 +15,6 @@ for ($i = 1; $i -le 2; $i++) {
 
 $vmName = $vmName+$i
 # Deploy VM from template
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile "" -TemplateParameterFile $templateUri -vmName $vmName
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $template -TemplateParameterFile $templateParameters -Name $vmName
 
 }
